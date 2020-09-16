@@ -680,16 +680,16 @@
 #define X_DRIVER_TYPE  TMC2208_STANDALONE
 #define Y_DRIVER_TYPE  TMC2208_STANDALONE
 #define Z_DRIVER_TYPE  TMC2208_STANDALONE
-//#define X2_DRIVER_TYPE TMC2208_STANDALONE
-//#define Y2_DRIVER_TYPE TMC2208_STANDALONE
+#define X2_DRIVER_TYPE TMC2208_STANDALONE
+#define Y2_DRIVER_TYPE TMC2208_STANDALONE
 #define Z2_DRIVER_TYPE TMC2208_STANDALONE
-//#define Z3_DRIVER_TYPE TMC2208_STANDALONE
-//#define Z4_DRIVER_TYPE TMC2208_STANDALONE
+#define Z3_DRIVER_TYPE TMC2208_STANDALONE
+#define Z4_DRIVER_TYPE TMC2208_STANDALONE
 #define E0_DRIVER_TYPE TMC2208_STANDALONE
-//#define E1_DRIVER_TYPE TMC2208_STANDALONE
-//define E2_DRIVER_TYPE TMC2208_STANDALONE
-//#define E3_DRIVER_TYPE TMC2208_STANDALONE
-//#define E4_DRIVER_TYPE TMC2208_STANDALONE
+#define E1_DRIVER_TYPE TMC2208_STANDALONE
+#define E2_DRIVER_TYPE TMC2208_STANDALONE
+#define E3_DRIVER_TYPE TMC2208_STANDALONE
+#define E4_DRIVER_TYPE TMC2208_STANDALONE
 //#define E5_DRIVER_TYPE A4988
 //#define E6_DRIVER_TYPE A4988
 //#define E7_DRIVER_TYPE A4988
@@ -962,14 +962,14 @@
  *
  * Specify a Probe position as { X, Y, Z }
  */
-#define NOZZLE_TO_PROBE_OFFSET { 0, 0, 0 }
+#define NOZZLE_TO_PROBE_OFFSET { 10, 10, 0 }
 
 // Most probes should stay away from the edges of the bed, but
 // with NOZZLE_AS_PROBE this can be negative for a wider probing area.
 #define MIN_PROBE_EDGE 10
 
 // X and Y axis travel speed (mm/m) between probes
-#define XY_PROBE_SPEED 3600
+#define XY_PROBE_SPEED 8000
 
 // Feedrate (mm/m) for the first approach when double-probing (MULTIPLE_PROBING == 2)
 #define Z_PROBE_SPEED_FAST HOMING_FEEDRATE_Z
@@ -1008,7 +1008,7 @@
 #define Z_CLEARANCE_MULTI_PROBE     5 // Z Clearance between multiple probes
 //#define Z_AFTER_PROBING           5 // Z position after probing is done
 
-#define Z_PROBE_LOW_POINT          -5 // Farthest distance below the trigger-point to go before stopping
+#define Z_PROBE_LOW_POINT          -2 // Farthest distance below the trigger-point to go before stopping
 
 // For M851 give a range for adjusting the Z probe offset
 #define Z_PROBE_OFFSET_RANGE_MIN -20
@@ -1036,7 +1036,7 @@
 #endif
 //#define PROBING_FANS_OFF          // Turn fans off when probing
 //#define PROBING_STEPPERS_OFF      // Turn steppers off (unless needed to hold position) when probing
-//#define DELAY_BEFORE_PROBING 500  // (ms) To prevent vibrations from triggering piezo sensors
+//#define DELAY_BEFORE_PROBING 200  // (ms) To prevent vibrations from triggering piezo sensors
 
 // For Inverting Stepper Enable Pins (Active Low) use 0, Non Inverting (Active High) use 1
 // :{ 0:'Low', 1:'High' }
@@ -1463,7 +1463,7 @@
 // every couple of seconds when it can't accept commands.
 //
 #define HOST_KEEPALIVE_FEATURE        // Disable this if your host doesn't like keepalive messages
-#define DEFAULT_KEEPALIVE_INTERVAL 5  // Number of seconds between "busy" messages. Set with M113.
+#define DEFAULT_KEEPALIVE_INTERVAL 2  // Number of seconds between "busy" messages. Set with M113.
 #define BUSY_WHILE_HEATING            // Some hosts require "busy" messages even during heating
 
 //
